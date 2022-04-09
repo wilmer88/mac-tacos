@@ -22,6 +22,8 @@ function LiComponent (props) {
         window.location.reload()
      })
   };
+
+
   function editarOrden(id) {
     console.log(id)
 

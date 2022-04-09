@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
+// import axios from "axios";
 import { useNavigate } from "react-router-dom"
+import API from "../utils/API"
 const numeros = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20,]
 
 const liestilo = {
@@ -15,23 +16,28 @@ const liestilo = {
   }
 }
 const Editar = () => {
+
+
   const [orden, setOrden] = useState({})
+  const [formObj, setFormObj] = useState({
+    // nombreDeOrden:"",
+    // azada: 0,
+    // pollo: 0,
+    // total: 0,
+    // precio: 0,
+  })
+
   const navigate = useNavigate()
   const { ordenId } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:3001/api/orden/" + `${ordenId}`, { mode: 'cors' }).then((response) => {
+   API.getOrden(ordenId).then((response) => {
       setOrden(response.data)
       console.log(response.data)
     })
   }, [])
 
-  const [formObj, setFormObj] = useState({
-    azada: 0,
-    pollo: 0,
-    total: 0,
-    precio: 0,
-  })
+
 
   function handleChangeI(e) {
     const { name, value } = e.target;
@@ -40,10 +46,28 @@ const Editar = () => {
     setFormObj({ ...formObj, [name]: value })
 
   };
+ 
+  const nuevoPrecio = parseInt(orden.total) * 3 
   function handleSubmit(e) {
+    orden.total = parseInt(orden.azada) +  parseInt(orden.pollo) + parseInt(formObj.pastor) + parseInt(formObj.chorizo) + parseInt(formObj.barbacoa)
+
     e.preventDefault(e);
-    axios.put(`/api/orden/${ordenId}`, formObj).then((response) => {
+   
+  
+    API.putOrden(ordenId, {
+      nombreDeOrden: formObj.nombreDeOrden,
+      azada: formObj.azada,
+      pollo: formObj.pollo,
+      barbacoa: formObj.barbacoa,
+      pastor: formObj.pastor,
+      chorizo: formObj.chorizo,
+      total: parseInt(orden.azada) + parseInt(orden.pollo),
+      precio: nuevoPrecio,
+    }).then((response) => {
       console.log(response.data)
+      alert("Nombre:" + orden.nombreDeOrden + "\n azada: " + orden.azada + "\n pollo: " + orden.pollo);
+      //debugger
+      navigate(`/ClientLine`)
       setOrden({
         nombreDeOrden: "",
         azada: "",
@@ -59,14 +83,11 @@ const Editar = () => {
       .catch((err) => {
         console.log(err)
       });
-    alert("Nombre:" + orden.nombreDeOrden + "\n azada: " + orden.azada + "\n pollo: " + orden.pollo);
-    //debugger
-    navigate(`/ClientLine`)
+   
 
 
   };
-  formObj.total = parseInt(orden.azada) +  parseInt(orden.pollo) + parseInt(orden.pastor) + parseInt(orden.chorizo) + parseInt(orden.barbacoa)
-  formObj.precio = formObj.total * 3 
+
   return (
     //<h1>me</h1>
     <>

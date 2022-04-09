@@ -33,12 +33,14 @@ function Meat() {
   function handleSubmit(e) {
     e.preventDefault();
     API.saveOrden(
-     { nombreDeOrden: formObj.nombreDeOrden,
+     { 
+       nombreDeOrden: formObj.nombreDeOrden,
       azada: formObj.azada,
       pollo: formObj.pollo,
       barbacoa: formObj.barbacoa,
       pastor: formObj.pastor,
-      chorizo: formObj.chorizo,}
+      chorizo: formObj.chorizo,
+    }
 
     ).then((response)  => {
       console.log(response.data)
