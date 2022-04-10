@@ -106,11 +106,8 @@ function Meat() {
                          Azada
                         </label>
                         <div className="mr-6  select is-small">
-                          <select
-                          
-                            name="azada"
-                            // value={orden.azada}
-                            onChange={handleChangeI}
+                          <select name="azada"  // value={orden.azada}
+ onChange={handleChangeI}
                           >
                             {numeros.map((nume) => (
                               <option key={nume.toString()} value={nume}>
