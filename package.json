@@ -10,7 +10,7 @@
     "server": "nodemon server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:dev":"node sever.js",
-    "start:prod": "node server.js",
+    "start:prod": "node server.js"
   },
   "repository": {
     "type": "git",
