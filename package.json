@@ -8,7 +8,8 @@
     "install-client": "cd client && npm install",
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
-    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev"
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:dev":"node sever.js"
   },
   "repository": {
     "type": "git",
