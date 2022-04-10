@@ -20,21 +20,21 @@ const OrdenHero = () => {
  
     return (
         <>
-                 <nav className="pagination" role="navigation" aria-label="pagination">
+                 {/* <nav className="pagination" role="navigation" aria-label="pagination">
   <button onClick={() => setBuissnesStatus({ ...buissnesStatus, dicho: buissnesStatus.cerradol , luzita: buissnesStatus.luzRoja})} className=" mr-6 is-small "></button>
   <button onClick={() => setBuissnesStatus({ ...buissnesStatus, dicho: buissnesStatus.labierto, luzita: buissnesStatus.luzVerde})} className=" ml-6 is-small "></button>
  
-</nav>
+</nav> */}
          <section className="hero is-medium is-link">
 
         <div className="hero-body">
     <div className="container has-text-centered">
-      <p className="title">
+      <div className="title">
       Porfavor Ordene
-      </p>
-      <p className="subtitle">
+      </div>
+      <div className="subtitle">
       Tacos
-      </p>
+      </div>
 
     </div>
   </div>
@@ -42,7 +42,7 @@ const OrdenHero = () => {
 <div color={buissnesStatus.luzita}>
 
 
-  <h3 style={{textAlign: "center"}}>{buissnesStatus.dicho} </h3>
+  {/* <h3 style={{textAlign: "center"}}>{buissnesStatus.dicho} </h3> */}
   
 
   </div>

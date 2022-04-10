@@ -1,7 +1,7 @@
 
 // import LiComponent from '../components/LiComponent';
 import OrdenHero from '../components/OrdenHero/OrdenHero';
-import Meat from '../components/Meat';
+// import Meat from '../components/Meat';
 
 const OrdenPage = () => {
     return (
@@ -9,7 +9,7 @@ const OrdenPage = () => {
         < OrdenHero/>
    
      
-       <Meat/>
+       {/* <Meat/> */}
 
         </>
     );
