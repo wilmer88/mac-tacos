@@ -84,12 +84,12 @@ function Meat() {
                     />
                   </div>
                   <div className="card-footer-item">
-                    <span>
+                  
                       Share on
                       <Link to="https://twitter.com/codinghorror/status/506010907021828096">
                         Facebook
                       </Link>
-                    </span>
+                 
                   </div>
                   </footer>
                  
