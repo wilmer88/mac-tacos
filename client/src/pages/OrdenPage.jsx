@@ -7,8 +7,7 @@ const OrdenPage = () => {
     return (
         <>
         < OrdenHero/>
-    <br></br>
-    <br></br>
+   
      
        <Meat/>
 
