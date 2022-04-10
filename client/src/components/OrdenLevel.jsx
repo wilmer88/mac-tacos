@@ -17,29 +17,29 @@ const estilo = {
 const OrdenLevel = () => {
  
     return (
-<>
+
 
 <div className="columns is-mobile is-12">
   <div className="column is-12">  
   
   <nav className="level">
-<p className="level-item has-text-centered" style={estilo.nombre}>
+<div className="level-item has-text-centered" style={estilo.nombre}>
   <Link to="/signIn"> Registrarse</Link>
- </p>
-        <p className="level-item has-text-centered" style={estilo.altura}>
+ </div>
+        <div className="level-item has-text-centered" style={estilo.altura}>
         Inicio
         <Link to="/"><img id="santos" src="https://www.placecage.com/g/200/300"  alt="" style={{ height: "60px" } }/> </Link> 
         
-        </p>
+        </div>
  
-        <p className="level-item has-text-centered" style={estilo.nombre}>
+        <div className="level-item has-text-centered" style={estilo.nombre}>
         <Link to="/ClientLine"> Lista de espera</Link>
-        </p>
+        </div>
       </nav>
       </div>
 </div>
 
-</>
+
      
     );
   
