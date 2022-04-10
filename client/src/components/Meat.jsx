@@ -69,7 +69,7 @@ function Meat() {
   //};
   
     return (
-      <>
+      
         <footer className="footer">
         
             
@@ -128,7 +128,7 @@ function Meat() {
              </div>
              
         </footer>
-      </>
+    
     );
   
 }
