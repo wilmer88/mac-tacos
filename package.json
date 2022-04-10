@@ -9,7 +9,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd client && npm run start",
     "install": "cd client && npm install",
-    "build": "cd client && npm run build",
+    "build": "cd client && npm install && npm run build",
     "heroku-postbuild": "npm run build"
   },
   "repository": {
@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "http-proxy-middelware": "^0.0.1-security",
     "if-env": "^1.0.4",
