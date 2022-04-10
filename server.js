@@ -24,7 +24,7 @@ app.use(logger("dev"));
   app.use(express.static("client/public"));
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mac-tacosDB",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://wilmerbaby:alfredo4269@cluster1.bdhv6.mongodb.net/ma-tacoDB?retryWrites=true&w=majority",{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // useCreateIndex: true,
