@@ -26,8 +26,8 @@ if(process.env.NODE_ENV === "production"){
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mac-tacosDB",{
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useCreateIndex: true,
-  useFindAndModify: false,
+  // useCreateIndex: true,
+  // useFindAndModify: false,
 });
 const connection = mongoose.connection;
 connection.on("connected", () => {
