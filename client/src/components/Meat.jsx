@@ -73,25 +73,8 @@ function Meat() {
         <footer className="footer">
         
             
-                      <div className="card">
-                     <div className="card-content">
-                      <div className="container">
-                    <div className="box is-shadowless is-align-self-center">
-                      <br></br>
-
-                      <div className="field is-horizontal">
-                        <div className="m-5 mr-8 media-content">
-                     <NombreSelect/>
-                          
-                        </div>
-                        <hr></hr>
-                        
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                 </div>
+                
+              
                  <footer className="card-footer">
                   <div className="card-footer-item">
                     <input
@@ -102,7 +85,7 @@ function Meat() {
                   </div>
                   <div className="card-footer-item">
                     <span>
-                      Share on{" "}
+                      Share on
                       <Link to="https://twitter.com/codinghorror/status/506010907021828096">
                         Facebook
                       </Link>
