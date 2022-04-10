@@ -3,14 +3,6 @@
   "description": "",
   "version": "1.0.0",
   "main": "server.js",
-  "devDependencies": {
-    "concurrently": "^7.1.0",
-    "nodemon": "^2.0.15"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wilmer88/mac-tacos.git"
-  },
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -19,6 +11,10 @@
     "install": "cd client && npm install",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wilmer88/mac-tacos.git"
   },
   "author": "",
   "license": "ISC",
@@ -33,5 +29,9 @@
     "mongoose": "^6.2.10",
     "morgan": "^1.10.0"
   },
-  "homepage": "https://github.com/wilmer88/mac-tacos#readme"
+  "homepage": "https://github.com/wilmer88/mac-tacos#readme",
+  "devDependencies": {
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
+  }
 }
