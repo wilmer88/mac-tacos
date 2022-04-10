@@ -4,13 +4,13 @@
   "version": "1.0.0",
   "main": "server.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "install-client": "cd client && npm install",
+    "heroku-postbuild": "npm run install-client && npm run build",
+    "server": "nodemon server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
-    "start:prod": "node server.js",
-    "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
-    "client": "cd client && npm run start",
-    "install": "cd client && npm install",
-    "build": "cd client && npm install && npm run build",
-    "heroku-postbuild": "npm run build"
+    "start:prod": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
+    "start:dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "repository": {
     "type": "git",
@@ -22,17 +22,18 @@
     "url": "https://github.com/wilmer88/mac-tacos/issues"
   },
   "dependencies": {
+    "body-parser": "^1.20.0",
     "cors": "^2.8.5",
     "dotenv": "^16.0.0",
     "express": "^4.17.3",
     "http-proxy-middelware": "^0.0.1-security",
     "if-env": "^1.0.4",
     "mongoose": "^6.2.10",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "path": "^0.12.7"
   },
   "homepage": "https://github.com/wilmer88/mac-tacos#readme",
   "devDependencies": {
-    "concurrently": "^7.1.0",
-    "nodemon": "^2.0.15"
+    "concurrently": "^7.1.0"
   }
 }
