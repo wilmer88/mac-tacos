@@ -9,8 +9,6 @@
     "heroku-postbuild": "npm run install-client && npm run build",
     "server": "nodemon server.js",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev"
-    // "start:prod": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\"",
-    // "start:dev": "concurrently --kill-others-on-fail \"npm run server\" \"npm run start --prefix client\""
   },
   "repository": {
     "type": "git",
