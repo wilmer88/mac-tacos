@@ -19,7 +19,7 @@ app.use(routes);
 
 app.use(logger("dev"));
 
-  app.use(express.static("client/build"));
+  app.use(express.static("./client/build"));
 
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mac-tacosDB",{
