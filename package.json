@@ -4,8 +4,8 @@
   "version": "1.0.0",
   "main": "server.js",
   "devDependencies": {
-    "concurrently": "^4.1.0",
-    "nodemon": "^1.18.7"
+    "concurrently": "^7.1.0",
+    "nodemon": "^2.0.15"
   },
   "repository": {
     "type": "git",
@@ -21,10 +21,8 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
- 
   "author": "",
   "license": "ISC",
-  
   "bugs": {
     "url": "https://github.com/wilmer88/mac-tacos/issues"
   },
@@ -32,6 +30,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "http-proxy-middelware": "^0.0.1-security",
+    "if-env": "^1.0.4",
     "mongoose": "^6.2.10",
     "morgan": "^1.10.0"
   },
