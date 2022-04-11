@@ -21,10 +21,12 @@ app.use(routes);
 
 app.use(logger("dev"));
 
-  app.use(express.static("client/public"));
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static("client/build"));
+}
 
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb+srv://wilmerbaby:alfredo4269@cluster1.bdhv6.mongodb.net/ma-tacoDB?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/mac-tacosDB",{
   useNewUrlParser: true,
   useUnifiedTopology: true,
   // useCreateIndex: true,
