@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const ordenController = require("../../controllers/OrdenControllers");
 
-router.route("/")
+router.route("/orden")
 .get(ordenController.findAll)
 .post(ordenController.create)
 
